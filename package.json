@@ -1,0 +1,26 @@
+{
+  "name": "code-vis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle src/index.tsx",
+    "render:code": "remotion render src/index.tsx CodeWalkthrough out/code-walkthrough.mp4",
+    "render:algorithm": "remotion render src/index.tsx SortingAlgorithm out/sorting-algorithm.mp4",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.438",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.438"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.1"
+  }
+}
