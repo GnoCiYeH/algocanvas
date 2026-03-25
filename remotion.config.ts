@@ -1,4 +1,10 @@
 import {Config} from '@remotion/cli/config';
 
-Config.setBrowserExecutable('/usr/bin/chromium-browser');
+const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE
+  ?? (process.platform === 'linux' ? '/usr/bin/chromium-browser' : null);
+
+if (browserExecutable) {
+  Config.setBrowserExecutable(browserExecutable);
+}
+
 Config.setOverwriteOutput(true);

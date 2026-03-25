@@ -382,6 +382,22 @@ Verification run after array render stability pass:
   - result: passed
   - output directory: `build/`
 
+### 2026-03-25 - Cross-platform Remotion browser config
+
+Work completed:
+- updated `remotion.config.ts` to stop hardcoding `/usr/bin/chromium-browser` on all platforms
+- added cross-platform behavior: prefer `REMOTION_BROWSER_EXECUTABLE`, otherwise use the Linux path only on Linux and let other platforms fall back to Remotion's default browser download flow
+
+Why it changed:
+- Windows rendering failed because the project-level Remotion config forced a Linux-only browser path
+
+Verification run after cross-platform Remotion browser config:
+- `npm run typecheck`
+  - result: passed
+- `npm run build`
+  - result: passed
+  - output directory: `build/`
+
 Verification run after pivot highlighting and active handoff:
 - `npm test`
   - result: passed
