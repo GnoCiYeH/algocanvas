@@ -10,25 +10,19 @@ const bubbleStateStyles: Record<string, ArrayItemStateStyleSpec> = {
     priority: 30,
     fill: '#7ab6ff',
     shadowColor: 'rgba(122, 182, 255, 0.30)',
-    brightness: 1.05,
-    scale: 1.03,
+    shadowOpacity: 1,
   },
   swap: {
     priority: 35,
     fill: '#9fd0ff',
-    outlineColor: '#d6ebff',
-    outlineWidth: 3,
     shadowColor: 'rgba(159, 208, 255, 0.32)',
-    brightness: 1.07,
-    scale: 1.02,
+    shadowOpacity: 1,
   },
   sorted: {
     priority: 40,
     fill: '#ffd166',
-    outlineColor: '#ffe3a3',
-    outlineWidth: 2,
     shadowColor: 'rgba(255, 209, 102, 0.28)',
-    brightness: 1.04,
+    shadowOpacity: 1,
   },
 };
 

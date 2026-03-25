@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This file is the persistent engineering log for the `code-vis` project.
+This file is the persistent engineering log for the `AlgoCanvas` project.
 It records why the project exists, how the current architecture is organized, what has been implemented so far, and what verification has been run.
 
 This file should be updated whenever the project changes in a meaningful way.
@@ -354,6 +354,25 @@ Why it changed:
 - the new model keeps semantic naming and visual styling in the DSL while constraining the visualizer to pure rendering and interpolation
 
 Verification run after array DSL state-style refactor:
+- `npm test`
+  - result: passed
+  - evidence: 20 test files passed, 29 tests passed
+- `npm run typecheck`
+  - result: passed
+- `npm run build`
+  - result: passed
+  - output directory: `build/`
+
+### 2026-03-25 - Array render stability pass
+
+Work completed:
+- removed high-frequency scale, brightness, and animated outline changes from the built-in bubble sort and quicksort state-style presets
+- kept the examples on fill-color and shadow-based state changes to reduce export-time shimmer in Remotion renders
+
+Why it changed:
+- rendered videos showed visible flicker, and the most likely source in the current implementation was per-frame animation of thin outlines, brightness filters, and slight scale changes on narrow bars
+
+Verification run after array render stability pass:
 - `npm test`
   - result: passed
   - evidence: 20 test files passed, 29 tests passed

@@ -1,4 +1,4 @@
-# code-vis
+# AlgoCanvas
 
 Remotion-based templates for code walkthrough and algorithm visualization videos.
 
